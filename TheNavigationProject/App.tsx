@@ -1,33 +1,48 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- */
+
+
 
 import React from 'react';
-import { Text, View } from 'react-native';
-
+import {StyleSheet, Text, View, SafeAreaView } from 'react-native';
+import MapView from "react-native-maps";
 
 function App(): JSX.Element {
 
   return (
-    <View style={{backgroundColor:"red", height:"100%"}}>
-      <View style={{backgroundColor:"grey", height:"10%"}}>
-        <Text style={{
-          textAlign:'center',
-          fontSize:25
-        }
 
-        }>Hello!</Text>
-      </View>
-      <View style={{backgroundColor:"purple", height:"70%"}}></View>
-      <View style={{backgroundColor:"yellow", height:"20%"}}></View>
-    </View>
+    <SafeAreaView style={styles.wrapper}>
+
+ 
+      <MapView style={styles.map}
+    initialRegion={{
+    latitude: 37.78825,
+    longitude: -122.4324,
+    latitudeDelta: 0.0922,
+    longitudeDelta: 0.0421,
+  }}
+      />
+   
+
+
+    </SafeAreaView>
 
     );
 }
+const styles = StyleSheet.create({
 
+wrapper: {
+  flex: 1,
+  backgroundColor: "#262929"
+},
+
+map: {
+flex: 4
+
+}
+
+}
+
+
+)
 
 
 export default App;
