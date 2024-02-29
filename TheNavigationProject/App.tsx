@@ -2,8 +2,8 @@
 
 
 import React from 'react';
-import {StyleSheet, Text, View, SafeAreaView } from 'react-native';
-import MapView from "react-native-maps";
+import {StyleSheet, Text, View, SafeAreaView, Pressable } from 'react-native';
+import MapView, { Marker } from "react-native-maps";
 
 function App(): JSX.Element {
 
@@ -11,17 +11,23 @@ function App(): JSX.Element {
 
     <SafeAreaView style={styles.wrapper}>
 
- 
+    
       <MapView style={styles.map}
     initialRegion={{
     latitude: 37.78825,
     longitude: -122.4324,
-    latitudeDelta: 0.0922,
-    longitudeDelta: 0.0421,
+    latitudeDelta: 0.1122,
+    longitudeDelta: 0.1421,
   }}
-      />
-   
-
+  
+      >  
+        </MapView>
+      <View style={{flex:1}}/>
+      
+    <Pressable>
+      <Text style={styles.goButton}>Go!</Text>
+    </Pressable>
+  
 
     </SafeAreaView>
 
@@ -35,13 +41,18 @@ wrapper: {
 },
 
 map: {
-flex: 4
+flex: 5,
 
+},
+
+goButton: {
+  color: '#FCF8F1',
+  textAlign: 'center',
+  textAlignVertical: 'center',
 }
 
+
 }
-
-
 )
 
 
