@@ -22,13 +22,19 @@ function App(): JSX.Element {
   
       >  
         </MapView>
-      <View style={{flex:1}}/>
-      
-    <Pressable>
-      <Text style={styles.goButton}>Go!</Text>
-    </Pressable>
-  
 
+      {/* <View style={styles.goContainer}> */}
+      
+    {/* <Pressable style={styles.goButton}> */}
+    <View style={{flex:1}}>
+      <View style={{flex:1}}/>
+  
+        <Text style={{fontSize:60, color:'#FFF', textAlign: 'center'}}>Go!</Text>
+      
+     <View style={{flex:1}}/>
+    </View>
+    {/* </Pressable> */}
+    {/* </View> */}
     </SafeAreaView>
 
     );
@@ -40,8 +46,14 @@ wrapper: {
   backgroundColor: "#262929"
 },
 
+/* the flex here adjusts the area UNDER the map (the one with the button!) (1/5) */
 map: {
-flex: 5,
+flex: 4,
+
+},
+
+goContainer: { 
+
 
 },
 
@@ -49,6 +61,7 @@ goButton: {
   color: '#FCF8F1',
   textAlign: 'center',
   textAlignVertical: 'center',
+  
 }
 
 
