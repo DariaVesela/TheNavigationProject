@@ -11,7 +11,10 @@ function App(): JSX.Element {
   return (
     <SafeAreaView style={styles.wrapper}>
 
-    
+<View style={styles.currentLocationBar}>
+
+</View>    
+
       <MapView style={styles.map}
     initialRegion={{
     latitude: 37.78825,
@@ -22,19 +25,24 @@ function App(): JSX.Element {
   
       >  
         </MapView>
-
-      {/* <View style={styles.goContainer}> */}
-      
+ 
     {/* <Pressable style={styles.goButton}> */}
-    <View style={{flex:1}}>
+    {/* <View style={{flex:1}}>
       <View style={{flex:1}}/>
   
         <Text style={{fontSize:60, color:'#FFF', textAlign: 'center'}}>Go!</Text>
       
      <View style={{flex:1}}/>
-    </View>
+    </View> */}
     {/* </Pressable> */}
     {/* </View> */}
+
+
+    <View style={styles.goText}>
+
+    </View>
+
+
     </SafeAreaView>
   );
 }
@@ -48,8 +56,15 @@ wrapper: {
 
 /* the flex here adjusts the area UNDER the map (the one with the button!) (1/5) */
 map: {
-flex: 4,
+flex: 6,
+},
 
+currentLocationBar :{
+flex: 0.5
+},
+
+goText: {
+  flex: 1
 },
 
 goContainer: { 
