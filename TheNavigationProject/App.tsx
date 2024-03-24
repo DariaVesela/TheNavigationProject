@@ -1,49 +1,57 @@
 
 
 
-import React from 'react';
-import {StyleSheet, Text, View, SafeAreaView, Pressable } from 'react-native';
-import MapView, { Marker } from "react-native-maps";
+import React, {useState, useEffect} from 'react';
+import {StyleSheet, Text, View, SafeAreaView, Pressable, PermissionsAndroid } from 'react-native';
+import MapView, { Marker, PROVIDER_GOOGLE } from "react-native-maps";
 import Geolocation from '@react-native-community/geolocation';
 
 function App(): JSX.Element {
 
+  const [region, setRegion] = useState<{ latitude: number, longitude: number, latitudeDelta: number, longitudeDelta: number } | null>(null);
+
+  useEffect(() => {
+        // Function to request location permission
+        const requestLocationPermission = async () => {
+          try {
+            const granted = await PermissionsAndroid.request(
+              PermissionsAndroid.PERMISSIONS.ACCESS_FINE_LOCATION,{
+                title: 'Location Permission',
+                message: 'This app needs access to your location to provide location-based services.',
+                buttonNeutral: 'Ask Me Later',
+                buttonNegative: 'Cancel',
+                buttonPositive: 'OK',
+              },
+            );
+            if (granted === PermissionsAndroid.RESULTS.GRANTED) {
+              console.log('Location permission granted');
+              // Access the device's location
+    Geolocation.getCurrentPosition(
+      position => {
+        const { latitude, longitude } = position.coords;
+        setRegion({
+          latitude,
+          longitude,
+          latitudeDelta: 0.0922,
+          longitudeDelta: 0.0421,
+        });
+      },
+      error => console.log("Error getting location:", error.message),
+      { enableHighAccuracy: true, timeout: 20000, maximumAge: 1000 }
+    );
+  } []);
+
   return (
-    <SafeAreaView style={styles.wrapper}>
-
-<View style={styles.currentLocationBar}>
-
-</View>    
-
-      <MapView style={styles.map}
-    initialRegion={{
-    latitude: 37.78825,
-    longitude: -122.4324,
-    latitudeDelta: 0.1122,
-    longitudeDelta: 0.1421,
-  }}
-  
-      >  
-        </MapView>
- 
-    {/* <Pressable style={styles.goButton}> */}
-    {/* <View style={{flex:1}}>
-      <View style={{flex:1}}/>
-  
-        <Text style={{fontSize:60, color:'#FFF', textAlign: 'center'}}>Go!</Text>
-      
-     <View style={{flex:1}}/>
-    </View> */}
-    {/* </Pressable> */}
-    {/* </View> */}
-
-
-    <View style={styles.goText}>
-
+    <View style={styles.wrapper}>
+      {region && (
+        <MapView
+          style={styles.map}
+          provider={PROVIDER_GOOGLE}
+          region={region}
+          showsUserLocation
+        />
+      )}
     </View>
-
-
-    </SafeAreaView>
   );
 }
 
@@ -51,16 +59,16 @@ const styles = StyleSheet.create({
 
 wrapper: {
   flex: 1,
-  backgroundColor: "#262929"
+  backgroundColor: "#FFFFFF"
 },
 
-/* the flex here adjusts the area UNDER the map (the one with the button!) (1/5) */
 map: {
-flex: 6,
+flex: 8,
 },
 
 currentLocationBar :{
-flex: 0.5
+flex: 0.5,
+
 },
 
 goText: {
