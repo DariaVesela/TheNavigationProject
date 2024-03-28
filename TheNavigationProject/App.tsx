@@ -114,7 +114,7 @@ flex: 0.5,
 },
 
 goText: {
-  flex: 1
+  flex: 0.2
 },
 
 goContainer: { 
