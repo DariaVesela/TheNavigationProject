@@ -5,6 +5,7 @@ import React, {useState, useEffect} from 'react';
 import {StyleSheet, Text, View, SafeAreaView, Pressable, PermissionsAndroid } from 'react-native';
 import MapView, { Marker, PROVIDER_GOOGLE, Region } from "react-native-maps";
 import Geolocation from '@react-native-community/geolocation';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 function App(): JSX.Element {
 
@@ -54,8 +55,9 @@ function App(): JSX.Element {
     <SafeAreaView style={styles.wrapper}>
 
 <View style={styles.currentLocationBar}>
-  <Text>Location bar</Text>
-</View>    
+  <Text>{region ? `Latitude: ${region.latitude}, Longitude: ${region.longitude}` : 'Getting location...'}</Text>
+</View>  
+   
     {
       region &&  <MapView style={styles.map}
       provider={PROVIDER_GOOGLE}
