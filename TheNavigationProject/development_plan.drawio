@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2024-04-16T10:41:37.225Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36" etag="BmvN7e-IBBDCQ9Ryu8_X" version="24.2.3" type="github">
+<mxfile host="app.diagrams.net" modified="2024-04-16T11:35:06.974Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36" etag="KHB9CFtdktPMm6wRAtUi" version="24.2.3" type="github">
   <diagram name="Page-1" id="Z43HYbOb06iZJgcrgzqE">
-    <mxGraphModel dx="1653" dy="1018" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2000" pageHeight="2000" math="0" shadow="0">
+    <mxGraphModel dx="3305" dy="2035" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2000" pageHeight="2000" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -28,7 +28,7 @@
         <mxCell id="Am7SAXZQbyqky8bTvC-_-10" value="&lt;font style=&quot;font-size: 24px;&quot;&gt;Refresh Component&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="480" y="350" width="180" height="70" as="geometry" />
         </mxCell>
-        <mxCell id="Am7SAXZQbyqky8bTvC-_-11" value="&lt;font style=&quot;font-size: 24px;&quot;&gt;Options Screen&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="Am7SAXZQbyqky8bTvC-_-11" value="&lt;span style=&quot;font-size: 24px;&quot;&gt;Search Bar&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="480" y="420" width="180" height="70" as="geometry" />
         </mxCell>
         <mxCell id="Am7SAXZQbyqky8bTvC-_-12" value="&lt;font style=&quot;font-size: 24px;&quot;&gt;User Rating upon End of Walk&amp;nbsp;&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
@@ -99,6 +99,15 @@
         </mxCell>
         <mxCell id="Am7SAXZQbyqky8bTvC-_-39" value="&lt;font style=&quot;font-size: 6px;&quot;&gt;View Saved Walks&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="660" y="510" width="120" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="Am7SAXZQbyqky8bTvC-_-40" value="&lt;font style=&quot;font-size: 6px;&quot;&gt;Shows current coarse location&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="660" y="420" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Am7SAXZQbyqky8bTvC-_-41" value="&lt;font style=&quot;font-size: 6px;&quot;&gt;Allow for user input looking for a particular landmark&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="660" y="450" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="Am7SAXZQbyqky8bTvC-_-42" value="&lt;font style=&quot;font-size: 6px;&quot;&gt;onclick on search &lt;font style=&quot;&quot;&gt;icon: landmark card(s) are shown -&amp;gt; leads to &quot;add landmark to walk&quot; screen&lt;/font&gt;&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="780" y="450" width="120" height="40" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
