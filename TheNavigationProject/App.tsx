@@ -7,6 +7,42 @@ import MapView, { Marker, PROVIDER_GOOGLE, Region } from "react-native-maps";
 import Geolocation from '@react-native-community/geolocation';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
+const styles = StyleSheet.create({
+
+  wrapper: {
+    flex: 1,
+    backgroundColor: "#FFFFFF"
+  },
+  
+  map: {
+  flex: 8,
+  },
+  
+  currentLocationBar :{
+  flex: 0.5,
+  
+  },
+  
+  goText: {
+    flex: 0.2
+  },
+  
+  goContainer: { 
+  
+  
+  },
+  
+  goButton: {
+    color: '#FCF8F1',
+    textAlign: 'center',
+    textAlignVertical: 'center',
+    
+  }
+  
+  
+  }
+  )
+
 function App(): JSX.Element {
 
   const [region, setRegion] = useState<Region | null>(null);
@@ -52,88 +88,33 @@ function App(): JSX.Element {
       },[]);
 
   return (
-    <SafeAreaView style={styles.wrapper}>
+  <SafeAreaView style={styles.wrapper}>
+    <View style={styles.currentLocationBar}>
+      <Text>
+      {region
+        ? `Latitude: ${region.latitude}, Longitude: ${region.longitude}`
+        : 'Getting location...'}
+    </Text>
+    {region && (
+      <MapView
+        style={styles.map}
+        provider={PROVIDER_GOOGLE}
+        region={region}
+        showsUserLocation
+      />
+    )}
+  </View>
 
-<View style={styles.currentLocationBar}>
-  <Text>{region ? `Latitude: ${region.latitude}, Longitude: ${region.longitude}` : 'Getting location...'}</Text>
-</View>  
-   
-    {
-      region &&  <MapView style={styles.map}
-      provider={PROVIDER_GOOGLE}
-      region={region}
-      showsUserLocation
-    />  
-    
-    }
-    
- 
-    {/* <Pressable style={styles.goButton}> */}
-    <View style={{flex:1}}>
-      <View style={{flex:1}}/>
+  {/* <Pressable style={styles.goButton}> */}
+  <View style={{ flex: 1 }}>
+    <View style={{ flex: 1 }} />
+    <Text style={{ fontSize: 60, color: '#000', textAlign: 'center' }}>Go!</Text>
+    <View style={{ flex: 1 }} />
+  </View>
+  {/* </Pressable> */}
   
-        <Text style={{fontSize:60, color:'#000', textAlign: 'center'}}>Go!</Text>
-      
-     <View style={{flex:1}}/>
-    </View>
-    {/* </Pressable> */}
-    {/* </View> */}
-
-
-    <View style={styles.goText}>
-
-    </View>
-
-
-    </SafeAreaView>
-    // <View style={styles.wrapper}>
-    //   {region && (
-    //     <MapView
-    //       style={styles.map}
-    //       provider={PROVIDER_GOOGLE}
-    //       region={region}
-    //       showsUserLocation
-    //     />
-    //   )}
-    // </View>
+  <View style={styles.goText}></View>
+</SafeAreaView>
   );
-}
-
-const styles = StyleSheet.create({
-
-wrapper: {
-  flex: 1,
-  backgroundColor: "#FFFFFF"
-},
-
-map: {
-flex: 8,
-},
-
-currentLocationBar :{
-flex: 0.5,
-
-},
-
-goText: {
-  flex: 0.2
-},
-
-goContainer: { 
-
-
-},
-
-goButton: {
-  color: '#FCF8F1',
-  textAlign: 'center',
-  textAlignVertical: 'center',
-  
-}
-
-
-}
-)
-
-
+    }
 export default App;
